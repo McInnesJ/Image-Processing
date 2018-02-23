@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
+{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red160\green32\blue240;\red34\green139\blue34;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs24 \cf0 \ul \ulc0 READ  ME\
+\
+\
+\ulnone Unpack ImageProcessing.zip \
+Move all the .m files (and surrey.png) contained within into your Matlab file path. \
+To run the program, open programControl.\
+\
+Program control is the top level script, and contains function calls to all of the functions the user may wish to utilise, though most are commented out.\
+It is split into three blocks\
+\
+	1. Image input/generation. The image \'92surrey.png\'92 has already been read 	into the program. The 	user may also wish to investigate a 	chequerboard pattern. In this instance the user should 	comment out (add a percent sign to the line \
+	\'91image = double(imread(\cf2 'surrey.png'\cf0 ))./255;\'92 such that it reads\
+	\'91\cf3 % image = double(imread('surrey.png'))./255;\cf0 \'92 and uncomment \
+	(delete the percent sign) from the line \
+	\'91\cf3 %image = ipv_cheqpattern(500,500,25,25);\cf0 \'92 \
+	\
+	Note, both \'92surrey.png\'92 and the chequerboard have been given the label\
+	\'91image\'92 This is to ensure the user does not need to concern themselves 	with changing the arguments to the functions in section 2 or 3.\
+\
+\
+	2. Image Warps. Here are list of all the transformation functions in 	the program has been included. The user may comment and uncomment 	functions, ensuring that only the function s/he wishes to run is 	uncommented at any one time. The results of the transformation will be\
+	displayed (by the line \'91imgshow(test);\'92 Note that once again, each 	function has been given the same label, in this instance, \'91test\'92. This 	is to ensure the user need not change the input argument of imgshow(). 	It is however important to ensure only one function is uncommented at a \
+	time. Failure to do so may cause errors. \
+\
+	For each of these functions the first input argument is the image which 	the user wishes to warp. Under the normal operation the user should not 	concern themselves with this input, and can change the image being 	warped as explained in section 1. \
+\
+		For lowPassFilter() the second input argument is window size. The \
+		user can use this parameter to effect the \'91degree of blurring\'92 		caused by the low pass filter.\
+\
+		For functions beginning \'91rotate\'92 the second input argument is the 		angle of rotation. \
+\
+		For functions beginning \'92scale\'92 the second input argument is the 		scale factor.\
+\
+	The user is encouraged to change these second input parameters to see 	how they effect the warps being performed.\
+\
+\
+	3. MSE Calculations. Here the program carries out error calculations on 	the various warps. getMSE has 5 input arguments. \
+		1. Image. The image to be transformed.\
+		2. mapDirection. i.e. select forwards (\'91f\'92) or backwards (\'91b\'92) 		mapping.\
+		3. transformations. i.e. select rotate (\'91r\'92) or scale (\'92s\'92).\
+		4. interpolation. Select interpolation technique. i.e. nearest 		neighbour (\'92n\'92) or bilinear (\'92n\'92).\
+		5. Transformation value. i.e. enter the angle of rotation if 		investigating a rotation, or the scale factor if investigating \
+		a scale. \
+\
+}
